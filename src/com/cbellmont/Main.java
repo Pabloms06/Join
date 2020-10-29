@@ -11,10 +11,10 @@ try{
         Camarero camarero = new Camarero();
         Cliente cliente = new Cliente(camarero);
         // Es importante que empiece el camarero ya que se queda esperando.
-        cliente.start();
         camarero.start();
-        cliente.join();
+        cliente.start();
         camarero.join();
+        cliente.join();
     }catch(InterruptedException e){
           e.printStackTrace();
 }
