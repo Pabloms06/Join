@@ -7,11 +7,17 @@ public class Main {
     public static final ArrayList<String> list = new ArrayList<>();
 
     public static void main(String[] args) {
+try{
         Camarero camarero = new Camarero();
         Cliente cliente = new Cliente(camarero);
         // Es importante que empiece el camarero ya que se queda esperando.
         cliente.start();
-    }
+        camarero.start();
+        cliente.join();
+        camarero.join();
+    }catch(InterruptedException e){
+          e.printStackTrace();
+}
 
 
 }
